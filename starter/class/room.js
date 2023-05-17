@@ -19,12 +19,15 @@ class Room {
     console.log("");
     console.log(this.description);
     console.log("");
+
     if (this.getEnemies().length > 0) {
       console.log(`Enemies: ${this.getEnemies().map(enemy => enemy.name).join(", ")}`);
     }
+
     if (this.items.length > 0) {
       console.log(`Items: ${this.items.map(item => item.name).join(", ")}`);
     }
+
     console.log(this.getExitsString());
     console.log("");
   }
@@ -52,16 +55,15 @@ class Room {
   }
 
   getItemByName(name) {
-
-    // Fill this in
-
+    return this.items.find(item => item.name === name);
   }
 
-  getEnemyByName(name) {}
-
-    // Fill this in
+  getEnemyByName(name) {
+    return this.getEnemies().find(enemy => enemy.name === name);
+  }
 
 }
+
 
 module.exports = {
   Room,
